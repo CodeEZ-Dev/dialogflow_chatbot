@@ -3,6 +3,8 @@ from fastapi import Request
 from fastapi.responses import JSONResponse
 import db_helper
 import generic_helper
+import uvicorn
+import os
 
 app = FastAPI()
 
@@ -144,3 +146,7 @@ def track_order(parameters: dict, session_id: str):
     return JSONResponse(content={
         "fulfillmentText": fulfillment_text
     })
+
+
+if __name__ == "__main__":
+    uvicorn.run(app,host='0.0.0.0',port=int((os.environ.get('PORT',8000))))
