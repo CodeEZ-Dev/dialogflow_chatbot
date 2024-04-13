@@ -2,9 +2,9 @@ import mysql.connector
 global cnx
 
 cnx = mysql.connector.connect(
-    host="34.66.85.72",
+    host="localhost",
     user="root",
-    password="Murali@123",
+    password="murali@123",
     database="car_accessories"
 )
 
